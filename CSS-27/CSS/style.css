@@ -1,0 +1,26 @@
+/* Приоритет 10 */
+.block {
+  width: 500px;
+  height: 500px;
+  background: #000;
+}
+
+/* Приоритет 100 */
+#block {
+  background: green;
+}
+
+/* Приоритет 10 */
+.block-2 {
+  background: red;
+}
+
+/* Приоритет 1 */
+div {
+  background: #9137ce !important;
+}
+
+/* Приоритет 1+10=11 */
+div.block {
+  background: brown;
+}
