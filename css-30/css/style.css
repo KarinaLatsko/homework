@@ -1,0 +1,39 @@
+body {
+  font-size: 40px;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+.block,
+.inline {
+  background: #f7d2e8;
+}
+
+/* ============================================================================== */
+
+.block {
+  /* padding: 50px;
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  margin: 50px; */
+  /* padding: 30px 60px 10px 100px; */
+  /* padding: 30px 60px 10px; */
+  /* padding: 30px 60px; */
+  padding: 30px;
+  }
+
+.block-1{
+  margin: 0 0 -50px 0;
+}  
+/* 
+.block-2 {
+  margin-top: 100px;
+} */
+
+.inline {}
+
+.img {}
