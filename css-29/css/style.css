@@ -1,0 +1,13 @@
+.block {
+  /* width: 1000px; */
+  background: #888585;
+  max-width: 1000px;
+  min-width: 800px;
+
+  min-height: 100px;
+  max-height: 1000px;
+}
+
+.img {
+  max-width: 1000px;
+}
