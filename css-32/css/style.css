@@ -1,0 +1,37 @@
+body {
+  font-size: 40px;
+}
+
+* {
+  box-sizing: content-box;
+}
+
+.block,
+.inline {
+  background: #f7d2e8;
+}
+
+/* ============================================================================== */
+
+.block {
+/* border: 10px groove #cf9feb; */
+/* border-top: 15px double #000;
+border-width: 10px;
+border-style: dotted;
+border-color: #ee7700ff;
+border-bottom-color: #7700ff; */
+border: 1px solid #000;
+
+
+/* border-radius: 100px; */
+border-top-right-radius: 40px;
+}
+
+/* .inline {
+  border: 1px solid #000;
+} */
+
+.img {
+  border: 10px dotted #ec9bd4;
+  border-radius: 30px;
+}
