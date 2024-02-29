@@ -1,0 +1,33 @@
+body {
+  font-size: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.block,
+.inline {
+  background: #f7d2e8;
+}
+
+.block {
+  padding: 30px;
+  margin: 50px;
+}
+
+/* ============================================================================== */
+
+.block {
+  box-shadow: -10px 15px 70px #263258, 10px -30px 70px #f01818;
+  border-radius: 30px;
+  /* -webkit-box-shadow: 27px 48px 77px -2px rgba(214, 17, 199, 0.6);
+  -moz-box-shadow: 27px 48px 77px -2px rgba(214, 17, 199, 0.6);
+  -box-shadow: 27px 48px 77px -2px rgba(214, 17, 199, 0.6); */
+}
+
+.inline {}
+
+.img {
+  box-shadow: 10px 15px 60px 10px #630c96;
+}
