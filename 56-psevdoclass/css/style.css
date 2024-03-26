@@ -1,0 +1,131 @@
+body {
+    background-color: #1d1d1f;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+
+.wrapper {
+    padding: 50px;
+    min-height: 100%;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.link {
+    /* display: block;
+    background-color: #555;
+    border-radius: 2em;
+    padding: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 100px; */
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 2em;
+    margin-bottom: 100px;
+    font-size: inherit;
+}
+
+.button {
+    display: block;
+    background-color: #555;
+    border-radius: 2em;
+    padding: 2em;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: inherit;
+    color: inherit;
+    margin-bottom: 100px;
+    width: 100%;
+}
+
+/* ======================================================== */
+
+/* .link:hover {
+    background: #b1ed95;
+}
+
+.link:active {
+    background: rgb(148, 148, 242);
+}
+
+.block__title:hover {
+    color: #ff0000;
+}
+
+.button:active {
+    background: rgb(148, 148, 242);
+}
+
+:focus {
+    box-shadow: 0 0 20px 10px #adff2f;
+}
+
+.input:focus {
+    box-shadow: 0 0 20px 50px #adff2f;
+}
+
+.list__item:first-child {
+    color: #d749ae;
+}
+
+.list__item:last-child {
+    color: #00ffff;
+}
+
+.list__item:nth-child(3) {
+    color: green;
+}
+
+.list__item:nth-child(odd) {
+    color: orange;
+}
+
+.list__item:nth-child(even) {
+    color: rgb(87, 9, 101);
+} */
+
+.link:focus {
+    text-decoration: underline;
+    color: #4761e4;
+}
+
+.input:focus {
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
+.button:active {
+    transform: scale(0.95);
+    background: #f9c0ca;
+    color: #555;
+}
+
+.list__item:hover {
+    font-size: 1.5em;
+}
+
+.list__item:hover:nth-child(odd) {
+    color: #adff2f;
+}
+
+.list__item:hover:nth-child(even) {
+    color: #c93ba5;
+}
+
+.block__title:hover {
+    font-size: 2.5em;
+    color: #fbfd56;
+}
+
+.block__item:hover {
+    font-size: 1.5em;
+    color: #39e5f1;
+}
