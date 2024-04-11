@@ -31,17 +31,11 @@ body {
   max-width: 54px;
 }
 
-.nav {}
-
 .nav__list {
   display: flex;
   gap: 10px 30px;
   flex-wrap: wrap;
 }
-
-.nav__item {}
-
-.nav__link {}
 
 .header__socials {
   justify-content: end;
@@ -52,10 +46,6 @@ body {
   gap: 10px 30px;
   flex-wrap: wrap;
 }
-
-.socials__item {}
-
-.socials__link {}
 
 /* ========================================================= */
 
@@ -100,7 +90,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   max-width: 288px;
   width: 100%;
   height: 56px;
@@ -149,7 +139,7 @@ body {
 }
 
 .hero__list-item path {
-transition: all .5s;
+  transition: all .5s;
 }
 
 .hero__list-item:hover path {
@@ -161,5 +151,102 @@ transition: all .5s;
   color: #F8FCFF;
 }
 
+/* ===================================================================== */
 
+.main__general {
+  padding: 120px 0;
+}
 
+.main__wrapper {
+  display: flex;
+  gap: 126px;
+}
+
+.main__body {
+  width: 100%;
+}
+
+.sidebar {
+  font-weight: 500;
+  line-height: 20px;
+  border: 2px solid #D0DCE7;
+  max-width: 282px;
+  width: 100%;
+  padding: 30px;
+}
+
+.sidebar__item {
+  margin-bottom: 20px;
+}
+
+.sidebar__item:last-child {
+  margin-bottom: 0px;
+}
+
+/* ================================================================== */
+
+.gallery {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: dense;
+  font-weight: 500;
+  color: #F8FCFF;
+}
+
+.gallery__img {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 100%;
+}
+
+.gallery__img:hover .gallery__hint {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+.gallery__img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.gallery__img--large-left {
+  grid-column: 1 / 3;
+  grid-row: span 2;
+}
+
+.gallery__img--large-right {
+  grid-column: -1 / -3;
+  grid-row: span 2;
+}
+
+.gallery__hint {
+  display: flex;
+  background: #1d6fb6b3;
+  height: 53px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  align-items: center;
+  justify-content: center;
+  
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all .5s;
+}
+
+.gallery__img--large-left .gallery__hint,
+.gallery__img--large-right .gallery__hint {
+  height: 103px;
+  font-size: 24px;
+  line-height: 29px;
+}
