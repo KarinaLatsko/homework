@@ -32,4 +32,52 @@ body {
   height: 100%;
 }
 
+.button {
+  
+}
+
 /* ========================================================= */
+
+.header__top {
+  padding-top: 19px;
+}
+.header__top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__logo {
+  max-width: 174px;
+}
+.nav {
+  }
+.nav__list {
+  display: flex;
+  gap: 40px;
+}
+.nav__item {
+}
+.nav__link {
+  display: block;
+  padding: 5px 0;
+  position: relative;
+}
+
+.nav__link::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -13px;
+  width: 34px;
+  height: 34px;
+  z-index: -1;
+  background: var(--accent-color);
+  border-radius: 50%;
+
+  opacity: 0;
+  transition: all .4s;
+}
+
+.nav__link:hover::before {
+  opacity: 1;
+}
