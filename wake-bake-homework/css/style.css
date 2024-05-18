@@ -167,7 +167,7 @@
 
 /* ==================================================== */
 
-.hero {
+.header__hero {
   padding: 50px 0 140px;
 }
 
@@ -284,8 +284,120 @@
   opacity: 1;
 }
 
+/* ===================================================== */
+
+.main__about {
+  padding: 140px 0;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 53px;
+}
+
+.about__img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.about__img>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.about__img-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  bottom: 4.6%;
+  left: 5%;
+  max-width: 299px;
+  background: #957b97e6;
+  color: var(--general-bg);
+  border-radius: 20px;
+  padding: 15px 20px;
+  position: absolute;
+}
+
+.about__img-button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  background: var(--general-bg);
+  border-radius: 50%;
+  position: relative;
+}
+
+.about__img-button::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid #CEAAD0;
+  border-radius: 50%;
+
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.about__img-button:hover::before {
+  opacity: 1;
+}
+
+.about__body {}
+
+.about__heading {}
+
+.about__title {
+  font-family: 'Gabriola';
+  font-size: 74px;
+  line-height: .82;
+  color: var(--accent-text);
+}
+
+.about__title-text {
+  margin-bottom: 30px;
+}
+
+.about__text {
+  margin-bottom: 40px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.about__grid-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  padding: 29px 24px;
+  background: var(--accent-bg);
+  border-radius: 20px;
+}
+
+.about__grid-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--accent-text);
+  height: 60px;
+  width: 60px;
+}
 
 
+.about__grid-text {}
 
 
 
@@ -535,7 +647,7 @@
     font-size: 12vw;
   }
 
-  .hero {
+  .header__hero {
     padding-bottom: 80px;
   }
 }
