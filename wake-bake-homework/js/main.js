@@ -1,5 +1,7 @@
 (function () {
 
+  // Бургер
+
   document.addEventListener('click', burgerInit)
 
   function burgerInit(e) {
@@ -18,26 +20,66 @@
 
   }
 
-const modal = document.querySelector('.modal')
-const modalButton = document.querySelector('.about__img-button')
+  // Модалка
 
-modal.addEventListener('click', closeModal)
-modalButton.addEventListener('click', openModal)
+  const modal = document.querySelector('.modal')
+  const modalButton = document.querySelector('.about__img-button')
 
-function openModal(e) {
-  e.preventDefault ()
+  modal.addEventListener('click', closeModal)
+  modalButton.addEventListener('click', openModal)
 
-  document.body.classList.toggle('body--opened-modal')
-}
+  function openModal(e) {
+    e.preventDefault()
 
-function closeModal(e) {
-  e.preventDefault ()
-
-  const target = e.target
-
-  if (target.closest('.modal__cancel') || target.classList.contains('modal')) {
-    document.body.classList.remove('body--opened-modal')
+    document.body.classList.toggle('body--opened-modal')
   }
-}
+
+  function closeModal(e) {
+    e.preventDefault()
+
+    const target = e.target
+
+    if (target.closest('.modal__cancel') || target.classList.contains('modal')) {
+      document.body.classList.remove('body--opened-modal')
+    }
+  }
+
+  // Табы
+
+  const tabControls = document.querySelector('.tab-controls')
+
+  tabControls.addEventListener('click', toggleTab)
+
+  function toggleTab(e) {
+
+    const tabControl = e.target.closest('.tab-controls__link')
+
+    if (!tabControl) return
+
+    e.preventDefault()
+
+    if (tabControl.classList.contains('tab-controls__link--active')) return
+
+    // console.log('Сработало')
+
+    const tabContentID = tabControl.getAttribute('href')
+
+    // console.log(tabContentID)
+
+    const tabContent = document.querySelector(tabContentID)
+    const contentActive = document.querySelector('.tab-content--show')
+    const controlActive = document.querySelector('.tab-controls__link--active')
+
+    if (controlActive)
+    controlActive.classList.remove('tab-controls__link--active')
+
+    if (contentActive)
+    contentActive.classList.remove('tab-content--show')
+    
+    tabControl.classList.add('tab-controls__link--active')
+    tabContent.classList.add('tab-content--show')
+    
+  }
+
 })()
 
