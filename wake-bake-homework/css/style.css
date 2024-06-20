@@ -683,6 +683,84 @@
   background: var(--accent-color);
 }
 
+/* ====================================================== */
+
+.contact {
+  padding: 140px 0;
+  background: url("../img/decors/bg-contact.png") 50% 0% / cover no-repeat;
+}
+
+.contact__inner {
+  display: flex;
+  align-items: end;
+  gap: 84px;
+}
+.contact__img img {
+  width: 100%;
+  filter: drop-shadow(0 4px 30px #c6b0a14d);
+}
+.contact__body {
+  max-width: 420px;
+}
+.contact__title {
+  margin-bottom: 20px;
+}
+
+.contact__text {
+  margin-bottom: 40px;
+}
+.contact__form {
+}
+.contact__form-label {
+  margin-bottom: 10px;
+}
+
+.contact__input {
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  border: 1px solid #AC907A;
+  border-radius: 100px;
+  padding: 19px 41px 19px 28px;
+  background: #00000000;
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+.contact__input:hover {
+  border-color: var(--accent-color);
+}
+
+.contact__input::placeholder {
+  color: #AC907A;
+  transition: var(--transition);
+}
+
+.contact__input:hover::placeholder {
+  color: var(--accent-color);
+}
+
+.contact__form-check {
+  display: flex;
+  gap: 5px;
+  align-items: start;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.contact__form-check a {
+  text-decoration: underline;
+  transition: var(--transition);
+}
+.contact__form-check:hover a {
+  color: var(--accent-color);
+}
+
+.contact__checkbox {
+  margin-top: 2px;
+}
+
+
 /* ======================================================= */
 /* ======================================================= */
 /* ======================================================= */
