@@ -697,12 +697,14 @@
 
   position: relative;
 }
+
 .contact__inner::before {
   content: url('../img/decors/berries.png');
   position: absolute;
   top: -4%;
   left: 0;
 }
+
 .contact__inner::after {
   content: url('../img/decors/berries-2.png');
   position: absolute;
@@ -782,11 +784,11 @@
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-  cursor: pointer;
 
   transition: var(--transition);
   position: relative;
 }
+
 .contact__checkbox::before {
   content: '';
   position: absolute;
@@ -796,6 +798,7 @@
   opacity: 0;
   transition: var(--transition);
 }
+
 .contact__checkbox:hover {
   border: 1.50px solid var(--accent-color);
 }
@@ -835,6 +838,12 @@
   .program__top {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  /* ============================ */
+
+  .contact__inner::after {
+    top: -20%;
   }
 
   /* ============================ */
@@ -887,6 +896,13 @@
 
   .accordion-content {
     padding: 0 23px 30px;
+  }
+
+  /* ============================= */
+
+  .contact__inner {
+    align-items: center;
+    gap: 30px;
   }
 }
 
@@ -973,6 +989,15 @@
   .testimonials__scrollbar.swiper-scrollbar {
     width: 50%;
     margin: 0 auto;
+  }
+
+  /* ============================= */
+
+  .contact__inner {
+    justify-content: center;
+  }
+  .contact__img {
+    display: none;
   }
 
   /* ============================== */
@@ -1068,6 +1093,12 @@
 
   .gallery__info {
     max-width: none;
+  }
+
+  /* ================================== */
+
+  .contact__inner::before {
+    display: none;
   }
 }
 
@@ -1177,6 +1208,17 @@
   }
 
   .testimonials__quote {
+    text-align: center;
+  }
+
+  /* =============================== */
+
+  .contact {
+    padding-bottom: 80px;
+  }
+
+  .contact__title,
+  .contact__text {
     text-align: center;
   }
 
