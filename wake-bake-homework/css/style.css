@@ -694,14 +694,31 @@
   display: flex;
   align-items: end;
   gap: 84px;
+
+  position: relative;
 }
+.contact__inner::before {
+  content: url('../img/decors/berries.png');
+  position: absolute;
+  top: -4%;
+  left: 0;
+}
+.contact__inner::after {
+  content: url('../img/decors/berries-2.png');
+  position: absolute;
+  top: 4%;
+  right: 0;
+}
+
 .contact__img img {
   width: 100%;
   filter: drop-shadow(0 4px 30px #c6b0a14d);
 }
+
 .contact__body {
   max-width: 420px;
 }
+
 .contact__title {
   margin-bottom: 20px;
 }
@@ -709,8 +726,9 @@
 .contact__text {
   margin-bottom: 40px;
 }
-.contact__form {
-}
+
+.contact__form {}
+
 .contact__form-label {
   margin-bottom: 10px;
 }
@@ -719,7 +737,7 @@
   margin-bottom: 20px;
   display: block;
   width: 100%;
-  border: 1px solid #AC907A;
+  border: 1px solid var(--input-color);
   border-radius: 100px;
   padding: 19px 41px 19px 28px;
   background: #00000000;
@@ -732,7 +750,7 @@
 }
 
 .contact__input::placeholder {
-  color: #AC907A;
+  color: var(--input-color);
   transition: var(--transition);
 }
 
@@ -752,12 +770,43 @@
   text-decoration: underline;
   transition: var(--transition);
 }
+
 .contact__form-check:hover a {
   color: var(--accent-color);
 }
 
 .contact__checkbox {
-  margin-top: 2px;
+  appearance: none;
+  border: 1.50px solid var(--input-color);
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  transition: var(--transition);
+  position: relative;
+}
+.contact__checkbox::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('../img/icons/check.svg') 50% 50% no-repeat;
+
+  opacity: 0;
+  transition: var(--transition);
+}
+.contact__checkbox:hover {
+  border: 1.50px solid var(--accent-color);
+}
+
+.contact__checkbox:checked {
+  border: 1.50px solid var(--accent-color);
+  background: var(--accent-color);
+}
+
+.contact__checkbox:checked::before {
+  opacity: 1;
 }
 
 
