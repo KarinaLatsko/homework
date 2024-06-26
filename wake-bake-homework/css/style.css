@@ -70,18 +70,8 @@
   opacity: 1;
 }
 
-.about__body {}
-
-.about__heading {}
-
-.about__title {}
-
 .about__title-text {
   margin-bottom: 30px;
-}
-
-.about__text {
-  /* margin-bottom: 40px; */
 }
 
 .about__grid {
@@ -111,12 +101,8 @@
 }
 
 
-.about__grid-text {}
-
 
 /* ======================================================== */
-
-.program {}
 
 .program__top {
   display: flex;
@@ -129,9 +115,6 @@
 .program__title {
   margin-bottom: 20px;
 }
-
-.program__text {}
-
 
 .program__tab-content {
   margin-bottom: 40px;
@@ -190,8 +173,6 @@
   }
 }
 
-.program__price {}
-
 .program__price-text {
   line-height: 1.6;
   text-transform: uppercase;
@@ -225,8 +206,6 @@
   flex-wrap: wrap;
 }
 
-.tab-controls__item {}
-
 .tab-controls__link {
   display: block;
   border-radius: 100px;
@@ -255,8 +234,6 @@
   display: block;
 }
 
-.accordion-list {}
-
 .accordion-list__item {
   border: 1px solid var(--accent-color);
   border-radius: var(--border-radius);
@@ -276,8 +253,7 @@
   display: flex;
   justify-content: space-between;
   gap: 10px;
-  /* align-items: center; */
-
+  
   font-family: "Gabriola";
   font-size: 42px;
   line-height: .9;
@@ -289,8 +265,6 @@
 .accordion-list__item--opened .accordion-list__control {
   padding: 40px 30px 20px;
 }
-
-.accordion-list__control-title {}
 
 .accordion-list__control-icon {
   height: 36px;
@@ -345,8 +319,6 @@
   gap: 80px;
 }
 
-.accordion-content__col {}
-
 .accordion-content__col:first-child {
   max-width: 507px;
   width: 100%;
@@ -358,8 +330,6 @@
   color: var(--uppercase-text);
   margin-bottom: 20px;
 }
-
-.accordion-content__list {}
 
 .accordion-content__item {
   display: flex;
@@ -393,8 +363,6 @@
 
 /* ====================================================== */
 
-.gallery {}
-
 .gallery__inner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -425,12 +393,6 @@
 .gallery__title {
   margin-bottom: 20px;
 }
-
-.gallery__text {}
-
-.gallery__slider {}
-
-.gallery__wrapper {}
 
 .gallery__nav {
   display: flex;
@@ -533,8 +495,6 @@
 .testimonials__title {
   margin-bottom: 20px;
 }
-
-.testimonials__text {}
 
 .testimonials__nav {
   display: flex;
@@ -728,8 +688,6 @@
 .contact__text {
   margin-bottom: 40px;
 }
-
-.contact__form {}
 
 .contact__form-label {
   margin-bottom: 10px;
@@ -1025,6 +983,11 @@
 }
 
 @media (max-width: 800px) {
+
+html {
+  scroll-padding-top: 50px;
+}
+
   .hero__content {
     max-width: none;
     display: flex;
