@@ -11,7 +11,8 @@ body {
   color: var(--general-text);
 }
 
-.body--opened-modal {
+.body--opened-modal-about,
+.body--opened-modal-calc {
   overflow: hidden;
 }
 
@@ -21,6 +22,14 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.main__hero {
+  margin: 126px 0 120px;
 }
 
 .container {
@@ -53,10 +62,16 @@ body {
   opacity: 1;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
 
 .header__top {
-  position: sticky;
-  top: 0;
+  background: #004643;
 }
 
 .header__top-connect {
@@ -64,8 +79,8 @@ body {
   gap: 48px;
   justify-content: end;
   align-items: center;
-  padding: 11px 100px;
-  margin: 0 -100px;
+  padding: 11px;
+  margin: 0 -250px;
   background: #004643;
   /* overflow: visible; */
   font-weight: 600;
@@ -85,19 +100,24 @@ body {
   gap: 30px;
 }
 
-.header__top-menu {
+.header__bottom {
+  background: #000;
+}
+
+.header__bottom-menu {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 -250px;
   gap: 59px;
   padding: 19px 0;
 }
 
-.header__top-logo {
+.header__bottom-logo {
   max-width: 155px;
 }
 
-.header__top-logo img {
+.header__bottom-logo img {
   width: 100%;
 }
 
@@ -117,12 +137,12 @@ body {
 
 .nav__link {}
 
-.header__hero {
+.hero {
   position: relative;
   overflow: hidden;
 }
 
-.header__hero-title {
+.hero__content-title {
   font-family: "Dela Gothic One";
   font-size: 54px;
   line-height: 1.42;
@@ -130,24 +150,24 @@ body {
   color: var(--accent-color);
 }
 
-.header__hero-title span {
+.hero__content-title span {
   color: var(--general-text);
 }
 
-.header__button-about {
+.hero__button-about {
   box-shadow: 0px 12px 23px 0 #0823228f, inset 0px 6px 6px 0 #36ece3, inset -0px -6px 6px 0 #176561;
   background: linear-gradient(180deg, #32ddd4 0%, #1a746f 100%);
   max-width: 216px;
 }
 
-.header__button-price {
+.hero__button-price {
   backdrop-filter: blur(30px);
   box-shadow: 0px 20px 40px 0 #33333333, inset 0px 9px 9px 0 #ffffff1a, inset -0px -9px 9px 0 #a2a2a21a;
   background: linear-gradient(180deg, #ffffff33 0%, #b5b5b533 100%);
   max-width: 246px;
 }
 
-.header__hero-content {
+.hero__content {
   padding: 60px 0 115px;
   display: flex;
   gap: 30px;
@@ -155,7 +175,7 @@ body {
   align-items: center;
 }
 
-.header__hero-column {
+.hero__content-column {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -163,18 +183,18 @@ body {
   gap: 20px;
 }
 
-.header__hero-column:first-child {
+.hero__content-column:first-child {
   gap: 290px;
 }
 
-.header__button {
+.hero__button {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 100px;
 }
 
-.header__hero-info {
+.hero__content-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -188,21 +208,21 @@ body {
   border-radius: 24px;
 }
 
-.header__hero-info:last-child {
+.hero__content-info:last-child {
   text-align: center;
 }
 
-.header__hero-info span {
+.hero__content-info span {
   font-weight: 700;
   font-size: 20px;
 }
 
-.header__hero-info p {
+.hero__content-info p {
   font-weight: 500;
   text-align: center;
 }
 
-.header__video {
+.hero__video {
   position: absolute;
   top: 0;
   left: 0;
@@ -214,12 +234,12 @@ body {
   margin: 0 auto;
 }
 
-.header__video video {
+.hero__video video {
   width: 100%;
 }
 
 /* =================================================== */
-.modal {
+.modal-about {
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -235,12 +255,12 @@ body {
   transition: all .6s;
 }
 
-.body--opened-modal .modal {
+.body--opened-modal-about .modal-about {
   opacity: 1;
   visibility: visible;
 }
 
-.modal__window {
+.modal-about__window {
   background: #004643;
   border-radius: 24px;
   padding: 60px;
@@ -248,7 +268,7 @@ body {
   max-width: 613px;
 }
 
-.modal__cancel {
+.modal-about__cancel {
   position: absolute;
   width: 32px;
   height: 32px;
@@ -256,8 +276,8 @@ body {
   right: 30px;
 }
 
-.modal__cancel-line-left,
-.modal__cancel-line-right {
+.modal-about__cancel-line-left,
+.modal-about__cancel-line-right {
   width: 100%;
   background: var(--general-text);
   height: 2.5px;
@@ -266,15 +286,15 @@ body {
   top: 14px;
 }
 
-.modal__cancel-line-left {
+.modal-about__cancel-line-left {
   transform: rotate(45deg);
 }
 
-.modal__cancel-line-right {
+.modal-about__cancel-line-right {
   transform: rotate(-45deg);
 }
 
-.modal__title {
+.modal-about__title {
   font-family: "Dela Gothic One";
   font-size: 40px;
   line-height: 1.4;
@@ -283,17 +303,16 @@ body {
   text-align: center;
 }
 
-.modal__text {
+.modal-about__text {
   margin-bottom: 30px;
   text-align: center;
   padding: 0 45px;
 }
 
-.modal__form {
-}
-  
+.modal-about__form {}
 
-.modal__form-label {
+
+.modal-about__form-label {
   margin-bottom: 10px;
 }
 
@@ -312,7 +331,7 @@ body {
   line-height: 1.4;
   color: var(--general-text);
   padding: 20px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(181, 181, 181, 0.2) 100%);
+  background: linear-gradient(180deg, #ffffff33 0%, #b5b5b533 100%);
   backdrop-filter: blur(15px);
   transition: all .6s;
   margin-bottom: 20px;
@@ -330,7 +349,7 @@ body {
   color: #ffffff80;
 }
 
-.modal__check-label {
+.modal-about__check-label {
   display: flex;
   align-items: start;
   gap: 10px;
@@ -340,16 +359,16 @@ body {
   color: #ffffff80;
 }
 
-.modal__check-label a {
+.modal-about__check-label a {
   text-decoration: underline;
   transition: all .6s;
 }
 
-.modal__check-label:hover a {
+.modal-about__check-label a:hover {
   color: var(--general-text);
 }
 
-.modal__checkbox {
+.modal-about__checkbox {
   appearance: none;
   border: 1px solid #D4D3D3;
   border-radius: 4px;
@@ -362,32 +381,188 @@ body {
   transition: all .6s;
 }
 
-.modal__checkbox::before {
+.modal-about__checkbox::before {
   content: '';
   position: absolute;
   inset: 0;
   background: url("../img/icons/check.svg") 50% 50% no-repeat;
+  background-size: contain;
   opacity: 0;
   transition: all .6s;
 }
 
-.modal__checkbox:hover {
+.modal-about__checkbox:hover {
   border: 1.5px solid var(--general-text);
 }
 
-.modal__checkbox:checked {
+.modal-about__checkbox:checked {
   border: 1.5px solid #004643;
   background: var(--accent-color);
 }
 
-.modal__checkbox:checked::before {
+.modal-about__checkbox:checked::before {
   opacity: 1;
 }
 
-.modal__button {
-    box-shadow: 0px 12px 23px 0 #0823228f, inset 0px 6px 6px 0 #36ece3, inset -0px -6px 6px 0 #176561;
-    background: linear-gradient(180deg, #32ddd4 0%, #1a746f 100%);
-    max-width: 151px;
-    color: var(--general-text);
-    margin: 0 auto;
+.modal-about__button {
+  box-shadow: 0px 12px 23px 0 #0823228f, inset 0px 6px 6px 0 #36ece3, inset -0px -6px 6px 0 #176561;
+  background: linear-gradient(180deg, #32ddd4 0%, #1a746f 100%);
+  max-width: 151px;
+  color: var(--general-text);
+  margin: 0 auto;
+}
+
+/* ====================================================================== */
+
+.modal-calculator {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  background: #000000bd;
+  padding: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: all .6s;
+}
+
+.body--opened-modal-calc .modal-calculator {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-calculator__window {
+  background: #004643;
+  border-radius: 24px;
+  padding: 60px 90px;
+  position: relative;
+  max-width: 1080px;
+}
+
+.modal-calculator__cancel {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 30px;
+  right: 30px;
+}
+
+.modal-calculator__cancel-line-left,
+.modal-calculator__cancel-line-right {
+  width: 100%;
+  background: var(--general-text);
+  height: 2.5px;
+  background: var(--general-text);
+  position: absolute;
+  top: 14px;
+}
+
+.modal-calculator__cancel-line-left {
+  transform: rotate(45deg);
+}
+
+.modal-calculator__cancel-line-right {
+  transform: rotate(-45deg);
+}
+
+.modal-calculator__title {
+  font-family: "Dela Gothic One";
+  font-size: 40px;
+  line-height: 1.4;
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.modal-calculator__title span {
+  color: var(--accent-color);
+}
+
+.modal-calculator__inner {
+  display: flex;
+  gap: 123px;
+  justify-content: space-between;
+}
+
+.modal-calculator__column {
+  margin-bottom: 20px;
+}
+
+.modal-calculator__text {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+}
+
+.modal-calculator__form {}
+
+
+.field {
+  position: relative;
+  display: block;
+}
+
+.modal-calculator__check-label {
+  display: flex;
+  align-items: start;
+  gap: 12px;
+  max-width: 326px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #ffffff80;
+}
+
+.modal-calculator__checkbox {
+  appearance: none;
+  border: 1px solid #D4D3D3;
+  border-radius: 4px;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  position: relative;
+  transition: all .6s;
+}
+
+.modal-calculator__checkbox::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("../img/icons/check.svg") 50% 50% no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: all .6s;
+}
+
+.modal-calculator__checkbox:hover {
+  border: 1.5px solid var(--general-text);
+}
+
+.modal-calculator__checkbox:checked {
+  border: 1.5px solid #004643;
+  background: var(--accent-color);
+}
+
+.modal-calculator__checkbox:checked::before {
+  opacity: 1;
+}
+
+.modal-calculator__button {
+  opacity: 0.8;
+  max-width: 282px;
+  color: var(--general-text);
+  margin: 0 auto;
+}
+.modal-calculator__button:hover {
+  box-shadow: 0px 20px 40px 0 #33333378, inset 0px 9px 9px 0 #fff, inset -0px -9px 9px 0 #a2a2a2;
+  background: linear-gradient(180deg, #fff 0%, #515151 100%);
+  opacity: .8;
 }

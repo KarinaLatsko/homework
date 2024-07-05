@@ -68,8 +68,12 @@
 
 
           </div>
-          <div class="header__top-menu">
-            <a class="header__top-logo" href="/">
+        </div>
+      </div>
+      <div class="header__bottom">
+        <div class="container">
+          <div class="header__bottom-menu">
+            <a class="header__bottom-logo" href="/">
               <img src="img/icons/logo/logo white.svg" alt="">
             </a>
             <nav class="nav">
@@ -101,72 +105,259 @@
           </div>
         </div>
       </div>
-      <div class="header__hero">
+    </header>
+
+    <main class="main">
+
+      <section class="main__hero hero">
         <div class="container">
-          <div class="header__hero-content">
-            <div class="header__hero-column">
-              <h1 class="header__hero-title">Moreon <span>Fitness</span></h1>
-              <div class="header__button">
-                <a class="header__button-about button" href="#">
+          <div class="hero__content">
+            <div class="hero__content-column">
+              <h1 class="hero__content-title">Moreon <span>Fitness</span></h1>
+              <div class="hero__button">
+                <a class="hero__button-about button" href="#">
                   Узнать подробнее
                 </a>
-                <a class="header__button-price button" href="#">
+                <a class="hero__button-price button" href="#">
                   Рассчитать стоимость
                 </a>
               </div>
             </div>
-            <div class="header__hero-column">
-              <div class="header__hero-info">
+            <div class="hero__content-column">
+              <div class="hero__content-info">
                 <span>15 000 м²</span>
                 <p>для эффективных тренировок</p>
               </div>
-              <div class="header__hero-info">
+              <div class="hero__content-info">
                 <span>600+</span>
                 <p>тренажеров</p>
               </div>
-              <div class="header__hero-info">
+              <div class="hero__content-info">
                 бассейны и СПА центр
               </div>
             </div>
           </div>
         </div>
-          <div class="header__video">
-            <video src="video/moreon-fitness-cut.webm" autoplay muted loop></video>
-          </div>
-      </div>
-    </header>
+        <div class="hero__video">
+          <video src="video/moreon-fitness-cut.webm" autoplay muted loop></video>
+        </div>
+      </section>
+
+
+    </main>
   </div>
 
-  <div class="modal">
-    <div class="modal__window">
-      <a class="modal__cancel" href="#">
-        <div class="modal__cancel-line-left"></div>
-        <div class="modal__cancel-line-right"></div>
+
+  <div class="modal-about">
+    <div class="modal-about__window">
+      <a class="modal-about__cancel" href="#">
+        <div class="modal-about__cancel-line-left"></div>
+        <div class="modal-about__cancel-line-right"></div>
       </a>
-      <h3 class="modal__title">
+      <h3 class="modal-about__title">
         Оставьте свои контактные данные
       </h3>
-      <p class="modal__text">
+      <p class="modal-about__text">
         Наши менеджеры свяжутся с Вами в ближайшее время
       </p>
-      <form class="modal__form">
-        <label class="modal__form-label field">
-          <input class="field__input" type="text" placeholder="Напишите ваше ФИО">
+      <form class="modal-about__form">
+        <label class="modal-about__form-label field">
+          <input class="field__input" type="text" required placeholder="Напишите ваше ФИО">
         </label>
-        <input class="field__input" type="tel" placeholder="Напишите номер телефона">
-        <label class="modal__form-label field">
-          <input class="field__input" type="text" placeholder="Напишите ваш комментарий">
+        <input class="field__input" type="tel" required placeholder="Напишите номер телефона">
+        <label class="modal-about__form-label field">
+          <textarea class="field__input" name="comment" spellcheck="true" rows="4"
+            placeholder="Напишите ваш комментарий"></textarea>
         </label>
-        <label class="modal__check-label">
-          <input class="modal__checkbox" type="checkbox">
+        <label class="modal-about__check-label">
+          <input class="modal-about__checkbox" type="checkbox">
           <span>
-            Я <a href="#" target="_blank">согласен на обработку </a>предоставленных мной персональных данных, согласно политике АО «Е.Т.С.», а также ознакомлен с <a href="#" target="_blank">правилами посещения</a> аквапарка, СПА-комплекса, термального комплекса, боулинга и фитнеса
+            Я <a href="#" target="_blank">согласен на обработку </a>предоставленных мной персональных данных, согласно
+            политике АО «Е.Т.С.», а также ознакомлен с <a href="#" target="_blank">правилами посещения</a> аквапарка,
+            СПА-комплекса, термального комплекса, боулинга и фитнеса
           </span>
         </label>
-        <button class="modal__button button" type="submit">
+        <button class="modal-about__button button" type="submit">
           Отправить
         </button>
       </form>
+    </div>
+  </div>
+
+  <div class="modal-calculator">
+    <div class="modal-calculator__window">
+      <a class="modal-calculator__cancel" href="#">
+        <div class="modal-calculator__cancel-line-left"></div>
+        <div class="modal-calculator__cancel-line-right"></div>
+      </a>
+      <h3 class="modal-calculator__title">
+        Расчитайте стоимоть вашей <span>клубной карты</span>
+      </h3>
+      <div class="modal-calculator__inner">
+        <div class="modal-calculator__column">
+          <p class="modal-calculator__text">
+            Какие зоны вы хотите посетить:
+          </p>
+          <form class="modal-calculator__form">
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="zone">
+              <span>
+                Фитнес
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="zone">
+              <span>
+                Термы + Фитнес
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="zone">
+              <span>
+                СПА + Фитнес
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="zone">
+              <span>
+                Фитнес + Термы + СПА
+              </span>
+            </label>
+          </form>
+          <p class="modal-calculator__text">
+            На какой срок нужна клубная карта?
+          </p>
+          <form class="modal-calculator__form">
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="period">
+              <span>
+                1 год
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="period">
+              <span>
+                6 месяцев
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="period">
+              <span>
+                3 месяца
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="period">
+              <span>
+                Затрудняюсь ответить
+              </span>
+            </label>
+          </form>
+          <p class="modal-calculator__text">
+            Нужна ли Вам рассрочка?
+          </p>
+          <form class="modal-calculator__form">
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="credit">
+              <span>
+                Да
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="credit">
+              <span>
+                Нет
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="credit">
+              <span>
+                Затрудняюсь ответить
+              </span>
+            </label>
+          </form>
+        </div>
+        <div class="modal-calculator__column">
+          <p class="modal-calculator__text">
+            Когда удобно посещать занятия?
+          </p>
+          <form class="modal-calculator__form">
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="time">
+              <span>
+                Утром
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="time">
+              <span>
+                Днем
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="time">
+              <span>
+                Вечером
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="time">
+              <span>
+                В выходные
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="time">
+              <span>
+                В любое время
+              </span>
+            </label>
+          </form>
+          <p class="modal-calculator__text">
+            Нужен ли персональный тренер?
+          </p>
+          <form class="modal-calculator__form">
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="trainer">
+              <span>
+                Да
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="trainer">
+              <span>
+                Нет
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="trainer">
+              <span>
+                Затрудняюсь ответить
+              </span>
+            </label>
+          </form>
+          <p class="modal-calculator__text">
+            Есть ли действующая карта другого фитнес-клуба?
+          </p>
+          <form class="modal-calculator__form">
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="other">
+              <span>
+                Да
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox" type="radio" name="other">
+              <span>
+                Нет
+              </span>
+            </label>
+          </form>
+        </div>
+      </div>
+      <button class="modal-calculator__button button" type="submit">
+        Перейти к последнему шагу
+      </button>
     </div>
   </div>
 
