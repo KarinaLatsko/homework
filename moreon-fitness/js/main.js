@@ -18,7 +18,7 @@
 
     const target = e.target
 
-    if (target.closest('.modal-about__cancel') || target.classList.contains('modal-about')) {
+    if (target.closest('.modal-cancel') || target.classList.contains('modal-about__button')) {
       document.body.classList.remove('body--opened-modal-about')
     }
   }
@@ -41,8 +41,55 @@
 
     const target = e.target
 
-    if (target.closest('.modal-calculator__cancel') || target.classList.contains('modal-calculator')) {
+    if (target.closest('.modal-cancel') || target.classList.contains('modal-calculator')) {
       document.body.classList.remove('body--opened-modal-calc')
+    }
+  }
+  // Модалка "Контактные данные"
+
+  const modalContact = document.querySelector('.modal-contact')
+  const modalButtonContact = document.querySelector('.modal-calculator__button')
+
+  modalButtonContact.addEventListener('click', openModalContact)
+  modalContact.addEventListener('click', closeModalContact)
+
+  function openModalContact(e) {
+    e.preventDefault()
+    document.body.classList.toggle('body--opened-modal-contact')
+    document.body.classList.remove('body--opened-modal-calc')
+  }
+
+  function closeModalContact(e) {
+    // e.preventDefault()
+
+    const target = e.target
+
+    if (target.closest('.modal-cancel') || target.classList.contains('modal-contact')) {
+      document.body.classList.remove('body--opened-modal-contact')
+    }
+  }
+
+  // Модалка "Спасибо"
+
+  const modalThanks = document.querySelector('.modal-thanks')
+  const modalButtonThanks = document.querySelector('.modal-contact__button')
+
+  modalButtonThanks.addEventListener('click', openModalThanks)
+  modalThanks.addEventListener('click', closeModalThanks)
+
+  function openModalThanks(e) {
+    e.preventDefault()
+    document.body.classList.toggle('body--opened-modal-thanks')
+    document.body.classList.remove('body--opened-modal-contact')
+  }
+
+  function closeModalThanks(e) {
+    // e.preventDefault()
+
+    const target = e.target
+
+    if (target.closest('.modal-cancel') || target.classList.contains('modal-thanks__button')) {
+      document.body.classList.remove('body--opened-modal-thanks')
     }
   }
 
