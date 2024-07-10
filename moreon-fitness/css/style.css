@@ -37,13 +37,6 @@ body {
 .container {
   max-width: 1310px;
   margin: 0 auto;
-  padding: 0 100px;
-  height: 100%;
-  overflow: visible;
-}
-.container-header {
-  max-width: 1310px;
-  margin: 0 auto;
   padding: 0 15px;
   height: 100%;
   overflow: visible;
@@ -88,7 +81,7 @@ body {
   gap: 48px;
   justify-content: end;
   align-items: center;
-  padding: 11px;
+  padding: 11px 0;
   background: #004643;
   /* overflow: visible; */
   font-weight: 600;
@@ -134,7 +127,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 42px;
+  gap: 28px 42px;
   line-height: 1.4;
   font-size: 14px;
   /* font-weight: 400; */
@@ -144,9 +137,62 @@ body {
 
 .nav__link {}
 
+.burger-icon {
+  display: none;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  z-index: 11;
+}
+
+.burger-icon span,
+.burger-icon span::before,
+.burger-icon span::after {
+  display: block;
+  width: 30px;
+  height: 3px;
+  border-radius: 100px;
+  background: var(--general-text);
+  transition: all .6s;
+}
+
+.burger-icon span {
+  position: relative;
+}
+
+.burger-icon span::before,
+.burger-icon span::after {
+  content: '';
+  position: absolute;
+}
+
+.burger-icon span::before {
+  top: -8px;
+}
+
+.burger-icon span::after {
+  bottom: -8px;
+}
+
+.body--opened-menu .burger-icon span {
+  background: transparent;
+}
+
+.body--opened-menu .burger-icon span::before {
+  top: 0px;
+  transform: rotate(45deg);
+}
+
+.body--opened-menu .burger-icon span::after {
+  bottom: 0px;
+  transform: rotate(-45deg);
+}
+
 .hero {
   position: relative;
   overflow: hidden;
+  /* height: 56vw; */
 }
 
 .hero__content-title {
@@ -170,7 +216,9 @@ body {
   position: absolute;
   background: #28b0a9;
   filter: blur(100px);
+  z-index: -1;
 }
+
 .hero__content-title::after {
   content: '';
   width: 188px;
@@ -181,6 +229,7 @@ body {
   right: -15%;
   background: #28b0a9;
   filter: blur(100px);
+  z-index: -1;
 }
 
 .hero__button-about {
@@ -197,7 +246,7 @@ body {
 }
 
 .hero__content {
-  padding: 60px 0 115px;
+  padding: 60px 100px 115px;
   display: flex;
   gap: 30px;
   justify-content: space-between;
@@ -251,6 +300,10 @@ body {
   text-align: center;
 }
 
+.hero__content-adaptive {
+  display: none;
+}
+
 .hero__video {
   position: absolute;
   top: 0;
@@ -258,27 +311,32 @@ body {
   right: 0;
   bottom: 0;
   max-width: 1280px;
+  /* height: 100%;
+  width: 100%; */
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
   margin: 0 auto;
 }
+
 .hero__video video {
   width: 100%;
+  /* height: 100%; */
 }
+
 .hero__video::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #0606068e;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0606068e;
 }
 
 
 /* =================================================== */
 .modal-about,
-.modal-calculator, 
+.modal-calculator,
 .modal-contact,
 .modal-thanks {
   position: fixed;
@@ -310,6 +368,10 @@ body {
   padding: 60px;
   position: relative;
   max-width: 613px;
+}
+
+.modal-about__window {
+  padding: 60px 44px;
 }
 
 .modal-calculator__window {
@@ -372,9 +434,9 @@ body {
 }
 
 .modal-calculator__inner {
-  display: flex;
-  gap: 123px;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 .modal-calculator__column {
@@ -498,6 +560,7 @@ body {
   color: var(--general-text);
   margin: 0 auto;
 }
+
 .modal-about__button {
   max-width: 151px;
 }
@@ -512,6 +575,7 @@ body {
   color: var(--general-text);
   margin: 0 auto;
 }
+
 .modal-calculator__button:hover {
   box-shadow: 0px 20px 40px 0 #33333378, inset 0px 9px 9px 0 #fff, inset -0px -9px 9px 0 #a2a2a2;
   background: linear-gradient(180deg, #fff 0%, #515151 100%);
@@ -523,3 +587,369 @@ body {
 }
 
 
+/* ======================================================================== */
+
+@media (max-width: 1100px) {
+  .main__hero {
+    margin: 110px 0 120px;
+  }
+
+  .nav__list {
+    gap: 20px;
+  }
+
+  /* ============================== */
+  .hero__content {
+    padding: 60px 45px 115px;
+  }
+
+  /* =============================== */
+  .modal-calculator__window {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .header__bottom-logo {
+    max-width: 125px;
+  }
+
+  .header__bottom-menu {
+    gap: 20px;
+  }
+
+  /* ================================= */
+  .hero__content {
+    padding: 35px 40px 50px;
+  }
+
+  /* ================================= */
+  .modal-calculator__window {
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .button {
+    font-weight: 400;
+    font-size: 15px;
+    height: 47px;
+  }
+
+  /* ========================= */
+
+  .header__top-connect {
+    justify-content: space-between;
+    padding: 11px 30px 11px 58px;
+  }
+
+  /* ========================= */
+  .header__bottom-menu {
+    position: relative;
+    padding: 8px 44px;
+  }
+
+  .burger-icon {
+    display: flex;
+  }
+
+  .header__bottom-logo {
+    position: absolute;
+    left: 40%;
+  }
+
+  .nav {
+    position: fixed;
+    inset: 0;
+    background: var(--general-bg);
+    z-index: 10;
+    font-size: 18px;
+    padding: 40px 70px 30px;
+
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: self-start;
+  }
+
+  .body--opened-menu .nav {
+    transform: translateY(12%);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* ================================= */
+  .hero__content-title {
+    font-size: 40px;
+  }
+
+  .hero__content-info {
+    gap: 6px;
+    height: 94px;
+    padding: 13px;
+  }
+
+  .hero__content-info span {
+    font-weight: 500;
+    font-size: 18px;
+  }
+
+  .hero__content-info p {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .hero__content-column {
+    gap: 40px;
+  }
+
+  .hero__content-column:first-child {
+    gap: 260px;
+  }
+
+  .hero__button {
+    gap: 70px;
+  }
+}
+
+
+@media (max-width: 800px) {
+
+  .hero__content {
+    padding: 20px 8px 35px;
+  }
+
+  .hero__content-column {
+    gap: 30px;
+  }
+
+  .hero__content-column:first-child {
+    gap: 230px;
+  }
+
+  .hero__button {
+    gap: 45px;
+  }
+
+  .hero__content-info {
+    gap: 3px;
+    width: 159px;
+    padding: 10px 4px;
+  }
+
+  /* ============================== */
+
+@media (max-width: 700px) {
+
+  .hero {
+    height: 56vw;
+  }
+
+  .main__hero {
+    margin: 110px 0 35px;
+  }
+
+  .hero__content {
+    display: none;
+  }
+
+  .hero__button {
+    display: block;
+  }
+
+  .hero__content-adaptive {
+    display: block;
+    padding: 0 15px;
+  }
+
+  .hero__content-title {
+    margin-bottom: 20px;
+  }
+
+  .hero__content-title::before {
+    top: -47%;
+    left: 11%;
+    }
+  .hero__content-title::after {
+    top: -54%;
+    right: 11%;
+    }
+
+  .hero__content-info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 3px;
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+
+  .hero__button-about {
+    margin: 0 auto;
+    margin-bottom: 15px;
+    max-width: 246px;
+  }
+
+  .hero__button-price {
+    margin: 0 auto;
+  }
+
+  /* ======================== */
+  .modal-contact__title {
+    font-size: 36px;
+  }
+
+  /* ========================= */
+
+  .modal-thanks__window {
+    padding: 50px 20px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__top-connect {
+    padding: 11px 8px;
+  }
+
+  .header__bottom-menu {
+    padding: 8px;
+  }
+
+  .nav {
+    padding: 40px;
+  }
+
+  /* ======================= */
+  .modal-calculator__window {
+    padding: 50px 20px;
+  }
+
+  .modal-calculator__inner {
+    display: block;
+    gap: 23px;
+  }
+
+  .modal-cancel {
+    width: 27px;
+    height: 27px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .modal-title {
+    font-size: 27px;
+  }
+
+  /* ======================= */
+  .modal-contact__window {
+    padding: 50px 28px 40px;
+  }
+
+  /* ======================== */
+  .modal-thanks__window {
+    padding: 47px 20px 30px;
+}
+  .modal-thanks__text {
+    padding: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .main__hero {
+    margin: 110px 0 22px;
+  }
+
+  /* ======================== */
+  .header__top-connect {
+    gap: 18px;
+    justify-content: space-between;
+    font-weight: 400;
+  }
+
+  .socials__list {
+    gap: 18px;
+  }
+
+  .socials__item:last-child {
+    display: none;
+  }
+
+  .header__top-tel img {
+    display: none;
+  }
+
+  /* ========================== */
+  .hero__content-title {
+    font-size: 30px;
+  }
+
+  .hero__content-info {
+    gap: 0px;
+    border-radius: 12px;
+  }
+
+  .hero__content-info span {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .hero__content-info p {
+    font-size: 13px;
+  }
+
+  /* ============================= */
+
+  .modal-about__window {
+    padding: 45px 15px;
+  }
+
+  .modal-title {
+    font-size: 21px;
+    margin-bottom: 20px;
+  }
+
+  .modal-text {
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+
+  .field__input {
+    padding: 14px;
+  }
+
+  /* ============================== */
+  .modal-calculator__window {
+    padding: 50px 15px 40px;
+  }
+
+  /* ================================ */
+
+  .modal-calculator__inner {
+    gap: 23px;
+  }
+
+  .modal-calculator__text {
+    font-weight: 400;
+  }
+
+  .modal-calculator__check-label {
+    gap: 10px;
+    margin-bottom: 9px;
+    font-size: 14px;
+  }
+
+  /* =============================== */
+  .modal-contact__window {
+    padding: 50px 20px 40px;
+  }
+
+  /* =============================== */
+
+  .modal-thanks__button {
+    height: 37px;
+  }
+}

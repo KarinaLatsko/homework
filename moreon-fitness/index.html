@@ -14,7 +14,7 @@
   <div class="wrapper">
     <header class="header">
       <div class="header__top">
-        <div class="container-header">
+        <div class="container">
           <div class="header__top-connect">
             <address class="header__top-tel">
               <img src="img/icons/phone.svg" alt="">
@@ -69,8 +69,11 @@
         </div>
       </div>
       <div class="header__bottom">
-        <div class="container-header">
+        <div class="container">
           <div class="header__bottom-menu">
+            <a class="burger-icon">
+              <span></span>
+            </a>
             <a class="header__bottom-logo" href="/">
               <img src="img/icons/logo/logo white.svg" alt="">
             </a>
@@ -130,7 +133,7 @@
                 <p>тренажеров</p>
               </div>
               <div class="hero__content-info">
-                бассейны и СПА центр
+                <p>бассейны и СПА центр</p>
               </div>
             </div>
           </div>
@@ -139,6 +142,30 @@
           <video src="video/moreon-fitness-cut.webm" autoplay muted loop></video>
         </div>
       </section>
+      <div class="hero__content-adaptive">
+        <h1 class="hero__content-title">Moreon <span>Fitness</span></h1>
+        <div class="hero__content-info-row">
+          <div class="hero__content-info">
+            <span>15 000 м²</span>
+            <p>для эффективных тренировок</p>
+          </div>
+          <div class="hero__content-info">
+            <span>600+</span>
+            <p>тренажеров</p>
+          </div>
+          <div class="hero__content-info">
+            <p>бассейны и СПА центр</p>
+          </div>
+        </div>
+        <div class="hero__button">
+          <a class="hero__button-about button" href="#">
+            Узнать подробнее
+          </a>
+          <a class="hero__button-price button" href="#">
+            Рассчитать стоимость
+          </a>
+        </div>
+      </div>
 
 
     </main>
@@ -196,151 +223,151 @@
             <p class="modal-calculator__text">
               Какие зоны вы хотите посетить:
             </p>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
-                <span>
-                  Фитнес
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
-                <span>
-                  Термы + Фитнес
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
-                <span>
-                  СПА + Фитнес
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
-                <span>
-                  Фитнес + Термы + СПА
-                </span>
-              </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
+              <span>
+                Фитнес
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
+              <span>
+                Термы + Фитнес
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
+              <span>
+                СПА + Фитнес
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="zone">
+              <span>
+                Фитнес + Термы + СПА
+              </span>
+            </label>
             <p class="modal-calculator__text">
               На какой срок нужна клубная карта?
             </p>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
-                <span>
-                  1 год
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
-                <span>
-                  6 месяцев
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
-                <span>
-                  3 месяца
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
-                <span>
-                  Затрудняюсь ответить
-                </span>
-              </label>
-            
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
+              <span>
+                1 год
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
+              <span>
+                6 месяцев
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
+              <span>
+                3 месяца
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="period">
+              <span>
+                Затрудняюсь ответить
+              </span>
+            </label>
+
             <p class="modal-calculator__text">
               Нужна ли Вам рассрочка?
             </p>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="credit">
-                <span>
-                  Да
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="credit">
-                <span>
-                  Нет
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="credit">
-                <span>
-                  Затрудняюсь ответить
-                </span>
-              </label>
-            </div>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="credit">
+              <span>
+                Да
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="credit">
+              <span>
+                Нет
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="credit">
+              <span>
+                Затрудняюсь ответить
+              </span>
+            </label>
+          </div>
           <div class="modal-calculator__column">
             <p class="modal-calculator__text">
               Когда удобно посещать занятия?
             </p>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
-                <span>
-                  Утром
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
-                <span>
-                  Днем
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
-                <span>
-                  Вечером
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
-                <span>
-                  В выходные
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
-                <span>
-                  В любое время
-                </span>
-              </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
+              <span>
+                Утром
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
+              <span>
+                Днем
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
+              <span>
+                Вечером
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
+              <span>
+                В выходные
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="time">
+              <span>
+                В любое время
+              </span>
+            </label>
             <p class="modal-calculator__text">
               Нужен ли персональный тренер?
             </p>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="trainer">
-                <span>
-                  Да
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="trainer">
-                <span>
-                  Нет
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="trainer">
-                <span>
-                  Затрудняюсь ответить
-                </span>
-              </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="trainer">
+              <span>
+                Да
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="trainer">
+              <span>
+                Нет
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="trainer">
+              <span>
+                Затрудняюсь ответить
+              </span>
+            </label>
             <p class="modal-calculator__text">
               Есть ли действующая карта другого фитнес-клуба?
             </p>
             <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="other">
-                <span>
-                  Да
-                </span>
-              </label>
-              <label class="modal-calculator__check-label">
-                <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="other">
-                <span>
-                  Нет
-                </span>
-              </label>
-            </div>
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="other">
+              <span>
+                Да
+              </span>
+            </label>
+            <label class="modal-calculator__check-label">
+              <input class="modal-calculator__checkbox modal-checkbox" type="radio" name="other">
+              <span>
+                Нет
+              </span>
+            </label>
+          </div>
         </div>
         <button class="modal-calculator__button button" type="submit">
           Перейти к последнему шагу
@@ -391,12 +418,12 @@
       <p class="modal-thanks__text modal-text">
         Менеджер свяжется с Вами в ближайшее время.
       </p>
-        <button class="modal-thanks__button button" type="submit">
-          Хорошо!
-        </button>
+      <button class="modal-thanks__button button" type="submit">
+        Хорошо!
+      </button>
     </div>
   </div>
-  
+
 
   <script src="js/inputmask.min.js"></script>
   <script src="js/main.js"></script>
