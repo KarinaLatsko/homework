@@ -167,8 +167,130 @@
         </div>
       </div>
 
+    </main>    
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__top">
+            <div class="footer__top-column-time">
+              <a class="footer__logo" href="#">
+                <img src="img/icons/logo/logo white.svg" alt="Логотип компании Moreon fitness">
+              </a>
+              <p>Время работы:</p>
+              <ul class="footer__time-list">
+                <li class="footer__time-item">
+                  Будни: 07:00 - 23:00
+                </li>
+                <li class="footer__time-item">
+                  Бассейн: 07:00 - 23:00
+                </li>
+                <li class="footer__time-item">
+                  Выходные: 09:00 - 23:00
+                </li>
+                <li class="footer__time-item">
+                  Бассейн: 09:00 - 23:00
+                </li>
+              </ul>
+            </div>
+            <div class="footer__top-column-areas">
+              <ul class="footer__areas-list">
+                <li class="footer__area-item">
+                  Тренажерный зал
+                </li>
+                <li class="footer__area-item">
+                  Спортивный бассейн
+                </li>
+                <li class="footer__area-item">
+                  Персональный тренинг
+                </li>
+                <li class="footer__area-item">
+                  Аэробные и кардио программы
+                </li>
+                <li class="footer__area-item">
+                  Скаладром для детей
+                </li>
+              </ul>
+            </div>
+            <div class="footer__top-column-info">
+              <ul class="footer__areas-list">
+                <li class="footer__area-item">
+                  Единоборства
+                </li>
+                <li class="footer__area-item">
+                  Танцы
+                </li>
+                <li class="footer__area-item">
+                  Фитнес-тестирование
+                </li>
+                <li class="footer__area-item">
+                  Вакансии
+                </li>
+                <li class="footer__area-item">
+                  Подарочный сертификат
+                </li>
+              </ul>
+            </div>
+            <address class="footer__top-column-contact">
+              <ul class="footer__contact-list">
+                <li class="footer__contact-item">
+                  <img src="img/icons/socials/telegram-ft.svg" alt="">
+                  г. Москва, м. Яснево, ул. Голубинская д. 16
+                </li>
+                <li class="footer__contact-item">
+                  <img src="img/icons/phone.svg" alt="">
+                  <a class="footer__contact-number" href="tel:+74958590370">
+                    +7 (495) 859-03-70
+                  </a>
+                </li>
+              </ul>
+              <ul class="footer__socials-list">
+                <li class="footer__socials-item">
+                  <a class="footer__socials-link" href="#">
+                    <img src="img/icons/socials/vk.svg" alt="">
+                  </a>
+                </li>
+                <li class="footer__socials-item">
+                  <a class="footer__socials-link" href="#">
+                    <img src="img/icons/socials/Instagram.svg" alt="">
+                  </a>
+                </li>
+                <li class="footer__socials-item">
+                  <a class="footer__socials-link" href="#">
+                    <img src="img/icons/socials/Facebook.svg" alt="">
+                  </a>
+                </li>
+              </ul>
+              <p>
+                Скачать приложение
+              </p>
+              <div class="footer__applications">
+                <img src="img/decor/google-play.png" alt="Google-play">
+                <img src="img/decor/app-store.png" alt="App-store">
+              </div>
+            </address>
+  
+          </div>
+          <div class="footer__line"></div>
+          <ul class="footer__bottom">
+            <li class="footer__bottom-item">
+              © АО Европейские технологии и сервис. 2023
+            </li>
+            <li class="footer__bottom-item">
+              Использование cookies
+            </li>
+            <li class="footer__bottom-item">
+              Политика обработки персональных данных
+            </li>
+            <li class="footer__bottom-item">
+              Правила посещения
+            </li>
+          </ul>
+        </div>
+      </div>
 
-    </main>
+    </footer>
+
   </div>
 
 
@@ -186,15 +308,15 @@
       </p>
       <form class="modal-about__form">
         <label class="modal-about__form-label field">
-          <input class="field__input" type="text" required placeholder="Напишите ваше ФИО">
+          <input class="field__input" type="text" placeholder="Напишите ваше ФИО">
         </label>
-        <input class="field__input" type="tel" required placeholder="Напишите номер телефона">
+        <input class="field__input" type="tel" placeholder="Напишите номер телефона">
         <label class="modal-about__form-label field">
           <textarea class="field__input" name="comment" spellcheck="true" rows="4"
             placeholder="Напишите ваш комментарий"></textarea>
         </label>
         <label class="modal-about__check-label check-label">
-          <input class="modal-about__checkbox modal-checkbox modal-checkbox" required type="checkbox">
+          <input class="modal-about__checkbox modal-checkbox modal-checkbox" type="checkbox">
           <span>
             Я <a href="#" target="_blank">согласен на обработку </a>предоставленных мной персональных данных, согласно
             политике АО «Е.Т.С.», а также ознакомлен с <a href="#" target="_blank">правилами посещения</a> аквапарка,
@@ -210,13 +332,15 @@
 
   <div class="modal-calculator">
     <div class="modal-calculator__window modal-window">
-      <a class="modal-cancel" href="#">
-        <div class="modal-cancel__line-left"></div>
-        <div class="modal-cancel__line-right"></div>
-      </a>
-      <h3 class="modal-calculator__title modal-title">
-        Расчитайте стоимоть вашей <span>клубной карты</span>
-      </h3>
+      <div class="modal-calculator__top">
+        <a class="modal-cancel" href="#">
+          <div class="modal-cancel__line-left"></div>
+          <div class="modal-cancel__line-right"></div>
+        </a>
+        <h3 class="modal-calculator__title modal-title">
+          Расчитайте стоимоть вашей <span>клубной карты</span>
+        </h3>
+      </div>
       <form class="modal-calculator__form">
         <div class="modal-calculator__inner">
           <div class="modal-calculator__column">
@@ -390,11 +514,11 @@
       </p>
       <form class="modal-contact__form">
         <label class="modal-contact__form-label field">
-          <input class="field__input" type="text" required placeholder="Напишите ваше ФИО">
+          <input class="field__input" type="text" placeholder="Напишите ваше ФИО">
         </label>
-        <input class="field__input" type="tel" required placeholder="Напишите номер телефона">
+        <input class="field__input" type="tel" placeholder="Напишите номер телефона">
         <label class="modal-contact__check-label check-label">
-          <input class="modal-contact__checkbox modal-checkbox modal-checkbox" required type="checkbox">
+          <input class="modal-contact__checkbox modal-checkbox modal-checkbox" type="checkbox">
           <span>
             Соглашаюсь с условиями обработки данных
           </span>
