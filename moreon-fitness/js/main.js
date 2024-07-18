@@ -113,6 +113,75 @@
     }
   }
 
+  // Табы
+
+  const tabControls = document.querySelector('.tab-controls')
+
+  tabControls.addEventListener('click', toggleTab)
+
+  function toggleTab(e) {
+
+    const tabControl = e.target.closest('.tab-controls__link')
+
+    if (!tabControl) return
+    e.preventDefault()
+
+    if (tabControl.classList.contains('tab-controls__link--active')) return
+
+    const tabContentID = tabControl.getAttribute('href')
+    const tabContent = document.querySelector(tabContentID)
+
+    const activeControl = document.querySelector('.tab-controls__link--active')
+    const activeContent = document.querySelector('.tab-content--show')
+
+    if (activeControl)
+      activeControl.classList.remove('tab-controls__link--active')
+
+    if (activeContent)
+      activeContent.classList.remove('tab-content--show')
+
+    tabControl.classList.add('tab-controls__link--active')
+    tabContent.classList.add('tab-content--show')
+  }
+
+  //Слайдер-акции
+
+  const swiper = new Swiper('.discount__slider', {
+
+    spaceBetween: 20,
+    slidesPerView: 1,
+    
+      pagination: {
+      el: '.discount__pagination',
+      type: 'bullets'
+    },
+  
+    navigation: {
+      nextEl: '.discount__next',
+      prevEl: '.discount__prev',
+    },
+
+    breakpoints: {
+      451: {
+        slidesPerView: 1.5,
+      },
+      601: {
+        slidesPerView: 2,
+      },
+      901: {
+        slidesPerView: 2.5,
+      },
+
+      1001: {
+        slidesPerView: 3,
+      },
+
+      1101: {
+        spaceBetween: 30,
+      }
+    }  
+  });
+
   // Маска для телефона
 
   const telInputs = document.querySelectorAll('input[type="tel"]')
