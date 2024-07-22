@@ -20,6 +20,18 @@
 
   }
 
+  // Автоматический рассчет высоты .header для margin-top .main__hero
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.header');
+    const mainHero = document.querySelector('.main__hero');
+
+    if (header && mainHero) {
+      const headerHeight = header.offsetHeight;
+      mainHero.style.marginTop = `${headerHeight}px`;
+    }
+  });
+
   // Модалка "Узнать подробнее"
 
   const modal = document.querySelector('.modal-about')
@@ -113,7 +125,7 @@
     }
   }
 
-  // Табы
+  // Табы секции discount
 
   const tabControls = document.querySelector('.tab-controls')
 
@@ -144,24 +156,85 @@
     tabContent.classList.add('tab-content--show')
   }
 
-  //Слайдер-акции
+  // Табы секции program
 
-  const swiper = new Swiper('.discount__slider', {
+  const tabProgram = document.querySelector('.tab-program')
+
+  tabProgram.addEventListener('click', toggleTabs)
+
+  function toggleTabs(e) {
+
+    const tabProgramLink = e.target.closest('.tab-program__link')
+
+    if (!tabProgramLink) return
+    e.preventDefault()
+
+    if (tabProgramLink.classList.contains('tab-program__link--active')) return
+
+    const ProgramTabContentID = tabProgramLink.getAttribute('href')
+    const ProgramTabContent = document.querySelector(ProgramTabContentID)
+
+    const activeProgram = document.querySelector('.tab-program__link--active')
+    const activeContentProgram = document.querySelector('.program-content--show')
+
+    if (activeProgram)
+      activeProgram.classList.remove('tab-program__link--active')
+
+    if (activeContentProgram)
+      activeContentProgram.classList.remove('program-content--show')
+
+    tabProgramLink.classList.add('tab-program__link--active')
+    ProgramTabContent.classList.add('program-content--show')
+  }
+
+  
+  // Табы inside внутри табов секции program
+
+  const tabInsideLinks = document.querySelectorAll('.tab-inside__link[data="tab_listin_1"], .tab-inside__link[data="tab_listin_2"], .tab-inside__link[data="tab_listin_3"], .tab-inside__link[data="tab_listin_4"], .tab-inside__link[data="tab_listin_5"]');
+
+  tabInsideLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      tabInsideLinks.forEach(item => {
+        item.classList.remove('tab-inside__link--active');
+      });
+
+      link.classList.add('tab-inside__link--active');
+
+      const contentId = link.getAttribute('href');
+
+      const allContent = document.querySelectorAll('.inside__tab-content');
+      allContent.forEach(content => {
+        content.classList.remove('inside-content--show');
+      });
+
+      const targetContent = document.querySelector(contentId);
+      targetContent.classList.add('inside-content--show');
+    });
+  });
+
+  //Слайдер секции "Акции"
+
+  const swiperDiscount = new Swiper('.discount__slider', {
 
     spaceBetween: 20,
-    slidesPerView: 1,
-    
-      pagination: {
+    slidesPerView: 3,
+
+    pagination: {
       el: '.discount__pagination',
       type: 'bullets'
     },
-  
+
     navigation: {
       nextEl: '.discount__next',
       prevEl: '.discount__prev',
     },
 
     breakpoints: {
+      101: {
+        slidesPerView: 1,
+      },
       451: {
         slidesPerView: 1.5,
       },
@@ -179,8 +252,28 @@
       1101: {
         spaceBetween: 30,
       }
-    }  
+    }
+
   });
+
+  //Слайдер секции "Все, что нужно..."
+
+  const swiperAllYouNeed = new Swiper('.allyouneed__slider', {
+
+    slidesPerView: 1,
+    
+    pagination: {
+      el: '.allyouneed__pagination',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.allyouneed__next',
+      prevEl: '.allyouneed__prev',
+    },
+
+  });
+
 
   // Маска для телефона
 
