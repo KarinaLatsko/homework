@@ -214,21 +214,21 @@
     });
   });
 
-  //Слайдер секции "Акции"
+  //Слайдеры секции "Акции"
 
-  const swiperDiscount = new Swiper('.discount__slider', {
+  const swiperAqua = new Swiper('.discount__slider--aqua', {
 
     spaceBetween: 20,
     slidesPerView: 3,
 
     pagination: {
-      el: '.discount__pagination',
+      el: '.discount__pagination--aqua',
       type: 'bullets'
     },
 
     navigation: {
-      nextEl: '.discount__next',
-      prevEl: '.discount__prev',
+      nextEl: '.discount__next--aqua',
+      prevEl: '.discount__prev--aqua',
     },
 
     breakpoints: {
@@ -256,20 +256,287 @@
 
   });
 
-  //Слайдер секции "Все, что нужно..."
+  const swiperBaths = new Swiper('.discount__slider--baths', {
 
-  const swiperAllYouNeed = new Swiper('.allyouneed__slider', {
+    spaceBetween: 20,
+    slidesPerView: 3,
 
-    slidesPerView: 1,
-    
     pagination: {
-      el: '.allyouneed__pagination',
+      el: '.discount__pagination--baths',
       type: 'bullets'
     },
 
     navigation: {
-      nextEl: '.allyouneed__next',
-      prevEl: '.allyouneed__prev',
+      nextEl: '.discount__next--baths',
+      prevEl: '.discount__prev--baths',
+    },
+
+    breakpoints: {
+      101: {
+        slidesPerView: 1,
+      },
+      451: {
+        slidesPerView: 1.5,
+      },
+      601: {
+        slidesPerView: 2,
+      },
+      901: {
+        slidesPerView: 2.5,
+      },
+
+      1001: {
+        slidesPerView: 3,
+      },
+
+      1101: {
+        spaceBetween: 30,
+      }
+    }
+
+  });
+
+  const swiperSpa = new Swiper('.discount__slider--spa', {
+
+    spaceBetween: 20,
+    slidesPerView: 3,
+
+    pagination: {
+      el: '.discount__pagination--spa',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.discount__next--spa',
+      prevEl: '.discount__prev--spa',
+    },
+
+    breakpoints: {
+      101: {
+        slidesPerView: 1,
+      },
+      451: {
+        slidesPerView: 1.5,
+      },
+      601: {
+        slidesPerView: 2,
+      },
+      901: {
+        slidesPerView: 2.5,
+      },
+
+      1001: {
+        slidesPerView: 3,
+      },
+
+      1101: {
+        spaceBetween: 30,
+      }
+    }
+
+  });
+
+
+  const swiperHolidays = new Swiper('.discount__slider--holidays', {
+
+    spaceBetween: 20,
+    slidesPerView: 3,
+
+    pagination: {
+      el: '.discount__pagination--holidays',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.discount__next--holidays',
+      prevEl: '.discount__prev--holidays',
+    },
+
+    breakpoints: {
+      101: {
+        slidesPerView: 1,
+      },
+      451: {
+        slidesPerView: 1.5,
+      },
+      601: {
+        slidesPerView: 2,
+      },
+      901: {
+        slidesPerView: 2.5,
+      },
+
+      1001: {
+        slidesPerView: 3,
+      },
+
+      1101: {
+        spaceBetween: 30,
+      }
+    }
+
+  });
+
+  const swiperFitness = new Swiper('.discount__slider--fitness', {
+
+    spaceBetween: 20,
+    slidesPerView: 3,
+
+    pagination: {
+      el: '.discount__pagination--fitness',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.discount__next--fitness',
+      prevEl: '.discount__prev--fitness',
+    },
+
+    breakpoints: {
+      101: {
+        slidesPerView: 1,
+      },
+      451: {
+        slidesPerView: 1.5,
+      },
+      601: {
+        slidesPerView: 2,
+      },
+      901: {
+        slidesPerView: 2.5,
+      },
+
+      1001: {
+        slidesPerView: 3,
+      },
+
+      1101: {
+        spaceBetween: 30,
+      }
+    }
+
+  });
+
+  const swiperBowling = new Swiper('.discount__slider--bowling', {
+
+    spaceBetween: 20,
+    slidesPerView: 3,
+
+    pagination: {
+      el: '.discount__pagination--bowling',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.discount__next--bowling',
+      prevEl: '.discount__prev--bowling',
+    },
+
+    breakpoints: {
+      101: {
+        slidesPerView: 1,
+      },
+      451: {
+        slidesPerView: 1.5,
+      },
+      601: {
+        slidesPerView: 2,
+      },
+      901: {
+        slidesPerView: 2.5,
+      },
+
+      1001: {
+        slidesPerView: 3,
+      },
+
+      1101: {
+        spaceBetween: 30,
+      }
+    }
+
+  });
+
+  //Слайдеры секции "Все, что нужно..."
+
+  const swiperSpaCenter = new Swiper('.allyouneed__slider--spacenter', {
+
+    slidesPerView: 1,
+    
+    pagination: {
+      el: '.allyouneed__pagination--spacenter',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.allyouneed__next--spacenter',
+      prevEl: '.allyouneed__prev--spacenter',
+    },
+
+  });
+
+  const swiperCafe = new Swiper('.allyouneed__slider--cafe', {
+
+    slidesPerView: 1,
+    
+    pagination: {
+      el: '.allyouneed__pagination--cafe',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.allyouneed__next--cafe',
+      prevEl: '.allyouneed__prev--cafe',
+    },
+
+  });
+
+  const swiperReception = new Swiper('.allyouneed__slider--reception', {
+
+    slidesPerView: 1,
+    
+    pagination: {
+      el: '.allyouneed__pagination--reception',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.allyouneed__next--reception',
+      prevEl: '.allyouneed__prev--reception',
+    },
+
+  });
+
+  const swiperSale = new Swiper('.allyouneed__slider--sale', {
+
+    slidesPerView: 1,
+    
+    pagination: {
+      el: '.allyouneed__pagination--sale',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.allyouneed__next--sale',
+      prevEl: '.allyouneed__prev--sale',
+    },
+
+  });
+
+  //Слайдер секции "Команда"
+
+  const swiperTeam = new Swiper('.team__slider', {
+
+    slidesPerView: 1,
+    
+    pagination: {
+      el: '.team__pagination',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.team__next',
+      prevEl: '.team__prev',
     },
 
   });
