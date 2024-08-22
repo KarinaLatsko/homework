@@ -22,38 +22,61 @@
 
   // Автоматический рассчет высоты .header для margin-top .main__hero
 
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.header');
-    const mainHero = document.querySelector('.main__hero');
+  const header = document.querySelector('.header');
+  const mainHero = document.querySelector('.main__hero');
 
-    if (header && mainHero) {
-      const headerHeight = header.offsetHeight;
-      mainHero.style.marginTop = `${headerHeight}px`;
-    }
-  });
+  if (header && mainHero) {
+    const headerHeight = header.offsetHeight;
+    mainHero.style.marginTop = `${headerHeight}px`;
+  }
 
   // Модалка "Узнать подробнее"
 
-  const modal = document.querySelector('.modal-about')
-  const modalButton = document.querySelector('.hero__button-about')
+  // const modal = document.querySelector('.modal-about')
+  // const modalButton = document.querySelector('.button-about')
 
-  modalButton.addEventListener('click', openModalAbout)
-  modal.addEventListener('click', closeModalAbout)
+  // modalButton.addEventListener('click', openModalAbout)
+  // modal.addEventListener('click', closeModalAbout)
+
+  // function openModalAbout(e) {
+  //   e.preventDefault()
+  //   document.body.classList.toggle('body--opened-modal-about')
+  // }
+
+  // function closeModalAbout(e) {
+  //   // e.preventDefault()
+
+  //   const target = e.target
+
+  //   if (target.closest('.modal-cancel') || target.classList.contains('modal-about__button')) {
+  //     document.body.classList.remove('body--opened-modal-about')
+  //   }
+  // }
+
+
+  // Модалка "Узнать подробнее в секциях hero и areas
+  const modal = document.querySelector('.modal-about');
+  const modalButtonClass = 'button-about';
+
+  document.body.addEventListener('click', function (e) {
+    if (e.target.classList.contains(modalButtonClass)) {
+      openModalAbout(e);
+    }
+
+    if (e.target.closest('.modal-cancel') || e.target.classList.contains('modal-about__button')) {
+      closeModalAbout(e);
+    }
+  });
 
   function openModalAbout(e) {
-    e.preventDefault()
-    document.body.classList.toggle('body--opened-modal-about')
+    e.preventDefault();
+    document.body.classList.toggle('body--opened-modal-about');
   }
 
   function closeModalAbout(e) {
-    // e.preventDefault()
-
-    const target = e.target
-
-    if (target.closest('.modal-cancel') || target.classList.contains('modal-about__button')) {
-      document.body.classList.remove('body--opened-modal-about')
-    }
+    document.body.classList.remove('body--opened-modal-about');
   }
+
 
   // Модалка "Рассчитать стоимость"
 
@@ -125,6 +148,37 @@
     }
   }
 
+    // Модалка modal-freeze "Заморозить карту"
+
+    const modalFreeze = document.querySelector('.modal-freeze')
+    const modalButtonFreeze = document.querySelector('.button-freeze')
+    const today = new Date()
+
+    const flatpickrInstance = flatpickr("#date", {
+      dateFormat: "d-m-Y",
+      minDate: today,
+      maxDate: new Date().fp_incr(30)
+  });
+
+    modalButtonFreeze.addEventListener('click', openModalFreeze)
+    modalFreeze.addEventListener('click', closeModalFreeze)
+  
+    function openModalFreeze(e) {
+      e.preventDefault()
+      document.body.classList.toggle('body--opened-modal-freeze')
+      flatpickrInstance.clear()
+    }
+  
+    function closeModalFreeze(e) {
+      // e.preventDefault()
+  
+      const target = e.target
+  
+      if (target.closest('.modal-cancel') || target.classList.contains('modal-freeze__button')) {
+        document.body.classList.remove('body--opened-modal-freeze')
+      }
+    }
+
   // Табы секции discount
 
   const tabControls = document.querySelector('.tab-controls')
@@ -187,7 +241,7 @@
     ProgramTabContent.classList.add('program-content--show')
   }
 
-  
+
   // Табы inside внутри табов секции program
 
   const tabInsideLinks = document.querySelectorAll('.tab-inside__link[data="tab_listin_1"], .tab-inside__link[data="tab_listin_2"], .tab-inside__link[data="tab_listin_3"], .tab-inside__link[data="tab_listin_4"], .tab-inside__link[data="tab_listin_5"]');
@@ -214,7 +268,38 @@
     });
   });
 
-  //Слайдеры секции "Акции"
+  // Табы секции areas
+
+  const areasControls = document.querySelector('.areas-controls')
+
+  areasControls.addEventListener('click', toggleAreas)
+
+  function toggleAreas(e) {
+
+    const areasControl = e.target.closest('.areas-controls__link')
+
+    if (!areasControl) return
+    e.preventDefault()
+
+    if (areasControl.classList.contains('areas-controls__link--active')) return
+
+    const areasContentID = areasControl.getAttribute('href')
+    const areasContent = document.querySelector(areasContentID)
+
+    const activeControlAreas = document.querySelector('.areas-controls__link--active')
+    const activeContentAreas = document.querySelector('.areas-content--show')
+
+    if (activeControlAreas)
+      activeControlAreas.classList.remove('areas-controls__link--active')
+
+    if (activeContentAreas)
+      activeContentAreas.classList.remove('areas-content--show')
+
+    areasControl.classList.add('areas-controls__link--active')
+    areasContent.classList.add('areas-content--show')
+  }
+
+  //Слайдеры секции discount
 
   const swiperAqua = new Swiper('.discount__slider--aqua', {
 
@@ -457,12 +542,12 @@
 
   });
 
-  //Слайдеры секции "Все, что нужно..."
+  //Слайдеры секции allyouneed
 
   const swiperSpaCenter = new Swiper('.allyouneed__slider--spacenter', {
 
     slidesPerView: 1,
-    
+
     pagination: {
       el: '.allyouneed__pagination--spacenter',
       type: 'bullets'
@@ -478,7 +563,7 @@
   const swiperCafe = new Swiper('.allyouneed__slider--cafe', {
 
     slidesPerView: 1,
-    
+
     pagination: {
       el: '.allyouneed__pagination--cafe',
       type: 'bullets'
@@ -494,7 +579,7 @@
   const swiperReception = new Swiper('.allyouneed__slider--reception', {
 
     slidesPerView: 1,
-    
+
     pagination: {
       el: '.allyouneed__pagination--reception',
       type: 'bullets'
@@ -510,7 +595,7 @@
   const swiperSale = new Swiper('.allyouneed__slider--sale', {
 
     slidesPerView: 1,
-    
+
     pagination: {
       el: '.allyouneed__pagination--sale',
       type: 'bullets'
@@ -523,12 +608,12 @@
 
   });
 
-  //Слайдер секции "Команда"
+  //Слайдер секции team
 
   const swiperTeam = new Swiper('.team__slider', {
 
     slidesPerView: 1,
-    
+
     pagination: {
       el: '.team__pagination',
       type: 'bullets'
@@ -540,6 +625,198 @@
     },
 
   });
+
+  //Слайдеры секции areas
+
+  const groupMainSwiper = new Swiper('.areas__slider--group-main', {
+    spaceBetween: 33,
+    navigation: {
+      nextEl: '.areas__next--group',
+      prevEl: '.areas__prev--group',
+    },
+    thumbs: {
+      swiper: {
+        el: '.areas__slider--group-thumbs',
+        slidesPerView: 4,
+        spaceBetween: 33,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+      },
+    },
+  });
+  const groupThumbsSwiper = new Swiper('.areas__slider--group-thumbs', {
+    spaceBetween: 25,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      451: {
+        slidesPerView: 3,
+      },
+      601: {
+        spaceBetween: 33,
+        slidesPerView: 4,
+      },
+    }
+  });
+
+
+  const gymMainSwiper = new Swiper('.areas__slider--gym-main', {
+    spaceBetween: 33,
+    navigation: {
+      nextEl: '.areas__next--gym',
+      prevEl: '.areas__prev--gym',
+    },
+    thumbs: {
+      swiper: {
+        el: '.areas__slider--gym-thumbs',
+        slidesPerView: 4,
+        spaceBetween: 33,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+      },
+    },
+  });
+  const gymThumbsSwiper = new Swiper('.areas__slider--gym-thumbs', {
+    spaceBetween: 25,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      451: {
+        slidesPerView: 3,
+      },
+      601: {
+        spaceBetween: 33,
+        slidesPerView: 4,
+      },
+    }
+  });
+
+
+  const cardioMainSwiper = new Swiper('.areas__slider--cardio-main', {
+    spaceBetween: 33,
+    navigation: {
+      nextEl: '.areas__next--cardio',
+      prevEl: '.areas__prev--cardio',
+    },
+    thumbs: {
+      swiper: {
+        el: '.areas__slider--cardio-thumbs',
+        slidesPerView: 4,
+        spaceBetween: 33,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+      },
+    },
+  });
+  const cardioThumbsSwiper = new Swiper('.areas__slider--cardio-thumbs', {
+    spaceBetween: 25,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      451: {
+        slidesPerView: 3,
+      },
+      601: {
+        spaceBetween: 33,
+        slidesPerView: 4,
+      },
+    }
+  });
+
+
+  const combatMainSwiper = new Swiper('.areas__slider--combat-main', {
+    spaceBetween: 33,
+    navigation: {
+      nextEl: '.areas__next--combat',
+      prevEl: '.areas__prev--combat',
+    },
+    thumbs: {
+      swiper: {
+        el: '.areas__slider--combat-thumbs',
+        slidesPerView: 4,
+        spaceBetween: 33,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+      },
+    },
+  });
+  const combatThumbsSwiper = new Swiper('.areas__slider--combat-thumbs', {
+    spaceBetween: 25,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+
+    breakpoints: {
+      451: {
+        slidesPerView: 3,
+      },
+      601: {
+        spaceBetween: 33,
+        slidesPerView: 4,
+      },
+    }
+  });
+
+  // Аккордеон
+
+  const accordionList = document.querySelectorAll('.accordion-list')
+
+  accordionList.forEach(el => {
+
+    // document.querySelector('.accordion-list__item--opened .accordion-list__content').style.maxHeight = document.querySelector('.accordion-list__item--opened .accordion-list__content').scrollHeight + 'px';
+
+    el.addEventListener('click', (e) => {
+
+      const accordionList = e.currentTarget
+      const accordionOpenedItem = accordionList.querySelector('.accordion-list__item--opened')
+      const accordionOpenedContent = accordionList.querySelector('.accordion-list__item--opened .accordion-list__content')
+
+      const accordionControl = e.target.closest('.accordion-list__control');
+      if (!accordionControl) return
+      e.preventDefault()
+      const accordionItem = accordionControl.parentElement;
+      const accordionContent = accordionControl.nextElementSibling;
+
+      if (accordionOpenedItem && accordionItem != accordionOpenedItem) {
+        accordionOpenedItem.classList.remove('accordion-list__item--opened');
+        accordionOpenedContent.style.maxHeight = null;
+      }
+
+      accordionItem.classList.toggle('accordion-list__item--opened');
+
+      if (accordionItem.classList.contains('accordion-list__item--opened')) {
+        accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+      } else {
+        accordionContent.style.maxHeight = null;
+      }
+
+    })
+  });
+
+
+
+  // const today = new Date();
+  //       // const dd = String(today.getDate()).padStart(2, '0');
+  //       // const mm = String(today.getMonth() + 1).padStart(2, '0'); // Январь - 0
+  //       // const yyyy = today.getFullYear();
+  //       // const minDate = `${yyyy}-${mm}-${dd}`; // Формат YYYY-MM-DD для Flatpickr
+
+  //       // Инициализация Flatpickr
+  //       flatpickr("#date", {
+  //           dateFormat: "d-m-Y", // Формат DD-MM-YYYY
+  //           minDate: today, // Минимальная дата - сегодня
+  //           maxDate: new Date().fp_incr(30)
+  //         });
 
 
   // Маска для телефона
