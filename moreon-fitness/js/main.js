@@ -767,6 +767,40 @@
     }
   });
 
+  // Слайдер секции testimonials
+
+  const swiperTestimonials = new Swiper('.testimonials__slider', {
+
+    spaceBetween: 30,
+    slidesPerView: 3,
+
+    pagination: {
+      el: '.testimonials__pagination',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.testimonials__next',
+      prevEl: '.testimonials__prev',
+    },
+
+    breakpoints: {
+      
+      101: {
+        spaceBetween: 20,
+        slidesPerView: 1,
+      },
+      601: {
+        spaceBetween: 30,
+        slidesPerView: 2,
+      },
+      
+      1001: {
+        slidesPerView: 3,
+      }
+    }
+  });
+
   // Аккордеон
 
   const accordionList = document.querySelectorAll('.accordion-list')
@@ -803,21 +837,40 @@
     })
   });
 
+  // Рейтинг ★★★★★ секции testimonials
+
+  const ratings = document.querySelectorAll('.rating');
+  if (ratings.length > 0) {
+    initRatings();
+  }
+    
+  function initRatings() {
+    let ratingActive, ratingValue;
+    for (let index = 0; index < ratings.length; index++) {
+      const rating = ratings[index];
+      initRating(rating);
+    }
+
+    function initRating(rating) {
+      initRatingVars(rating);
+
+      setRatingActiveWidth();
+    }
+
+    function initRatingVars(rating)  {
+      ratingActive = rating.querySelector('.rating__active');
+      ratingValue = rating.querySelector('.rating__value');
+    }
+
+    function setRatingActiveWidth(index = ratingValue.innerHTML) {
+      const ratingActiveWidth = index / 0.05;
+      ratingActive.style.width = `${ratingActiveWidth}%`;
+    }
+  }
 
 
-  // const today = new Date();
-  //       // const dd = String(today.getDate()).padStart(2, '0');
-  //       // const mm = String(today.getMonth() + 1).padStart(2, '0'); // Январь - 0
-  //       // const yyyy = today.getFullYear();
-  //       // const minDate = `${yyyy}-${mm}-${dd}`; // Формат YYYY-MM-DD для Flatpickr
 
-  //       // Инициализация Flatpickr
-  //       flatpickr("#date", {
-  //           dateFormat: "d-m-Y", // Формат DD-MM-YYYY
-  //           minDate: today, // Минимальная дата - сегодня
-  //           maxDate: new Date().fp_incr(30)
-  //         });
-
+  
 
   // Маска для телефона
 
