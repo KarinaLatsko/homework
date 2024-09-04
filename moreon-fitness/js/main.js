@@ -54,7 +54,7 @@
   // }
 
 
-  // Модалка "Узнать подробнее в секциях hero и areas
+  // Модалка "Узнать подробнее в секциях hero, areas, children
   const modal = document.querySelector('.modal-about');
   const modalButtonClass = 'button-about';
 
@@ -148,36 +148,36 @@
     }
   }
 
-    // Модалка modal-freeze "Заморозить карту"
+  // Модалка modal-freeze "Заморозить карту"
 
-    const modalFreeze = document.querySelector('.modal-freeze')
-    const modalButtonFreeze = document.querySelector('.button-freeze')
-    const today = new Date()
+  const modalFreeze = document.querySelector('.modal-freeze')
+  const modalButtonFreeze = document.querySelector('.button-freeze')
+  const today = new Date()
 
-    const flatpickrInstance = flatpickr("#date", {
-      dateFormat: "d-m-Y",
-      minDate: today,
-      maxDate: new Date().fp_incr(30)
+  const flatpickrInstance = flatpickr("#date", {
+    dateFormat: "d-m-Y",
+    minDate: today,
+    maxDate: new Date().fp_incr(30)
   });
 
-    modalButtonFreeze.addEventListener('click', openModalFreeze)
-    modalFreeze.addEventListener('click', closeModalFreeze)
-  
-    function openModalFreeze(e) {
-      e.preventDefault()
-      document.body.classList.toggle('body--opened-modal-freeze')
-      flatpickrInstance.clear()
+  modalButtonFreeze.addEventListener('click', openModalFreeze)
+  modalFreeze.addEventListener('click', closeModalFreeze)
+
+  function openModalFreeze(e) {
+    e.preventDefault()
+    document.body.classList.toggle('body--opened-modal-freeze')
+    flatpickrInstance.clear()
+  }
+
+  function closeModalFreeze(e) {
+    // e.preventDefault()
+
+    const target = e.target
+
+    if (target.closest('.modal-cancel') || target.classList.contains('modal-freeze__button')) {
+      document.body.classList.remove('body--opened-modal-freeze')
     }
-  
-    function closeModalFreeze(e) {
-      // e.preventDefault()
-  
-      const target = e.target
-  
-      if (target.closest('.modal-cancel') || target.classList.contains('modal-freeze__button')) {
-        document.body.classList.remove('body--opened-modal-freeze')
-      }
-    }
+  }
 
   // Табы секции discount
 
@@ -244,7 +244,7 @@
 
   // Табы inside внутри табов секции program
 
-  const tabInsideLinks = document.querySelectorAll('.tab-inside__link[data="tab_listin_1"], .tab-inside__link[data="tab_listin_2"], .tab-inside__link[data="tab_listin_3"], .tab-inside__link[data="tab_listin_4"], .tab-inside__link[data="tab_listin_5"]');
+  const tabInsideLinks = document.querySelectorAll('.tab-inside__link[data-tab="tab_listin_1"], .tab-inside__link[data-tab="tab_listin_2"], .tab-inside__link[data-tab="tab_listin_3"], .tab-inside__link[data-tab="tab_listin_4"], .tab-inside__link[data-tab="tab_listin_5"]');
 
   tabInsideLinks.forEach(link => {
     link.addEventListener('click', function (e) {
@@ -785,7 +785,7 @@
     },
 
     breakpoints: {
-      
+
       101: {
         spaceBetween: 20,
         slidesPerView: 1,
@@ -794,11 +794,40 @@
         spaceBetween: 30,
         slidesPerView: 2,
       },
-      
+
       1001: {
         slidesPerView: 3,
       }
     }
+  });
+
+  // Слайдер секции sauna
+
+  const swiperSauna = new Swiper('.sauna__slider', {
+
+    slidesPerView: 1,
+
+    pagination: {
+      el: '.sauna__pagination',
+      type: 'bullets'
+    },
+
+    navigation: {
+      nextEl: '.sauna__next',
+      prevEl: '.sauna__prev',
+    },
+  });
+
+  // Слайдер секции bar
+
+  const swiperBar = new Swiper('.bar__slider', {
+
+    slidesPerView: 1,
+
+    navigation: {
+      nextEl: '.bar__next',
+      prevEl: '.bar__prev',
+    },
   });
 
   // Аккордеон
@@ -843,7 +872,7 @@
   if (ratings.length > 0) {
     initRatings();
   }
-    
+
   function initRatings() {
     let ratingActive, ratingValue;
     for (let index = 0; index < ratings.length; index++) {
@@ -857,7 +886,7 @@
       setRatingActiveWidth();
     }
 
-    function initRatingVars(rating)  {
+    function initRatingVars(rating) {
       ratingActive = rating.querySelector('.rating__active');
       ratingValue = rating.querySelector('.rating__value');
     }
@@ -868,9 +897,29 @@
     }
   }
 
+  // Yandex-карта
+  const center = [55.597246, 37.527184];
 
+  function init() {
+    const map = new ymaps.Map('map', {
+      center: center,
+      zoom: 14
+    });
 
-  
+    const placemark = new ymaps.Placemark(center, {}, {
+      iconLayout: 'default#image',
+      iconImageHref: '../img/icons/marker.png',
+      iconImageSize: [40, 40],
+      iconImageOffset: [-19, -44]
+    });
+
+    map.controls.remove('searchControl');
+    map.controls.remove('fullscreenControl');
+    map.controls.remove('typeSelector');
+
+    map.geoObjects.add(placemark);
+  }
+  ymaps.ready(init);
 
   // Маска для телефона
 
