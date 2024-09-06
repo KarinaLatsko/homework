@@ -1680,7 +1680,7 @@
 /* =================================================== */
 
 .bar__inner {
-  padding: 137px 100px 103px;
+  padding: 100px 100px 103px;
 }
 
 .bar__title {
@@ -2321,7 +2321,7 @@
   /* =============================== */
 
   .bar__inner {
-    padding: 85px 45px 103px;
+    padding: 55px 45px 103px;
   }
 
   /* =============================== */
@@ -2482,6 +2482,10 @@
   }
 
   /* =============================== */
+
+  .bar__inner {
+    padding: 0px 45px 103px;
+}
 
   .bar__title,
   .bar__info {
@@ -2771,7 +2775,7 @@
   /* ==================================== */
 
   .bar__inner {
-    padding: 20px 26px 80px;
+    padding: 0px 26px 80px;
   }
 
   /* ==================================== */
@@ -3256,7 +3260,7 @@
   /* ======================= */
 
   .allyouneed__wrapper {
-    margin-bottom: 0px;
+    margin-bottom: 25px;
   }
 
   .allyouneed__main-text {
@@ -3564,6 +3568,14 @@
     padding: 0 15px 30px;
   }
 
+  .allyouneed__inner-content {
+    gap: 25px;
+  }
+
+  .allyouneed__wrapper {
+    margin-bottom: 10px;
+  }
+
   .allyouneed__pagination {
     display: flex;
     align-items: center;
@@ -3573,7 +3585,7 @@
 
   .allyouneed__prev,
   .allyouneed__next {
-    bottom: -7%;
+    bottom: -20%;
   }
 
   .allyouneed__prev--sale,
@@ -3713,12 +3725,12 @@
 
   /* ========================= */
 
-  .sauna__text {
-    margin-bottom: 70px;
+  .sauna__inner {
+    padding: 135px 15px 161px;
   }
 
-  .sauna__slider-container {
-    margin-bottom: 0;
+  .sauna__text {
+    margin-bottom: 70px;
   }
 
   .sauna__slider {
@@ -3743,7 +3755,8 @@
   /* ======================== */
 
   .bar__inner {
-    padding: 20px 15px 80px;
+    padding: 0px 15px 80px;
+    margin-top: -60px;
   }
 
   .bar__slider {
@@ -3970,7 +3983,7 @@
 
   .allyouneed__prev,
   .allyouneed__next {
-    bottom: -14%;
+    bottom: -24%;
   }
 
   .allyouneed__prev--sale,
@@ -4176,11 +4189,12 @@
 
   .sauna__text {
     font-size: 14px;
+    margin-bottom: 55px;
   }
 
   .sauna__prev,
   .sauna__next {
-    top: -33%;
+    top: -35%;
   }
 
   .sauna__slider {
@@ -4188,13 +4202,14 @@
   }
 
   .sauna__inner {
-    padding: 110px 15px 161px;
+    padding: 110px 15px 60px;
   }
 
   /* ============================= */
 
   .bar__inner {
     padding: 20px 10px 70px;
+    margin-top: 0;
   }
 
   .contacts__title {
