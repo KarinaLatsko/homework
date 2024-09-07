@@ -908,7 +908,7 @@
 
     const placemark = new ymaps.Placemark(center, {}, {
       iconLayout: 'default#image',
-      iconImageHref: 'img/icons/marker.png',
+      iconImageHref: 'https://image.flaticon.com/icons/png/512/64/64113.png',
       iconImageSize: [40, 40],
       iconImageOffset: [-19, -44]
     });
