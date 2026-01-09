@@ -1,0 +1,26 @@
+table {
+  font-family: sans-serif;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+td,
+th,
+caption {
+  border: 1px solid #000;
+  padding: 5px;
+}
+
+caption {
+  border-bottom: none;
+  font-weight: 700;
+}
+
+th {
+  text-transform: uppercase;
+}
+
+.red {
+  color: red;
+}
